@@ -10,6 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import net.arnx.jsonic.JSON;
@@ -17,12 +19,16 @@ import net.arnx.jsonic.JSON;
 import org.apache.commons.lang.StringUtils;
 import org.slim3.controller.Navigation;
 import org.slim3.controller.upload.FileItem;
+import org.slim3.datastore.Datastore;
+import org.slim3.memcache.Memcache;
 import org.slim3.util.RequestLocator;
 
+import com.google.appengine.api.datastore.Key;
 import com.google.code.japarser.dictionary.BitbucketDictionary;
 import com.google.code.japarser.dictionary.Dictionary;
 import com.google.code.japarser.dictionary.GitHubDictionary;
 import com.google.code.japarser.dictionary.GoogleCodeHostingDictionary;
+import com.google.code.japarser.model.AccessInfo;
 import com.google.code.japarser.model.ClassInfo;
 import com.google.code.japarser.parser.JavaParser;
 import com.google.code.japarser.parser.Parser;
@@ -63,6 +69,7 @@ public class SrcController extends RestfulWebServiceController {
 				int responseCode = conn.getResponseCode();
 				if (responseCode == HttpURLConnection.HTTP_OK) {
 					parse(conn.getInputStream());
+					incrementCounter(urlString);
 					return;
 				}
 			} catch (MalformedURLException e) {
@@ -131,5 +138,40 @@ public class SrcController extends RestfulWebServiceController {
 		ArrayList<String> ret = new ArrayList<String>();
 		ret.add(url);
 		return ret;
+	}
+	
+	private Long getCount(String urlString) {
+		Key key = Datastore.createKey(AccessInfo.class, urlString);
+		AccessInfo accessInfo = null;
+		if (Memcache.contains(urlString)) {
+			accessInfo = Memcache.get(urlString);
+		} else {
+			accessInfo = Datastore.get(AccessInfo.class, key);
+		}
+		
+		return accessInfo.getViewCount();
+	}
+	
+	private void incrementCounter(String urlString) {
+		Key key = Datastore.createKey(AccessInfo.class, urlString);
+		AccessInfo accessInfo = null;
+		Date now = Calendar.getInstance().getTime();
+		if (Memcache.contains(urlString)) {
+			accessInfo = Memcache.get(urlString);
+		} else {
+			accessInfo = Datastore.getOrNull(AccessInfo.class, key);
+			if (accessInfo == null) {
+				accessInfo = new AccessInfo();
+				accessInfo.setKey(key);
+				accessInfo.setFirstAccess(now);
+				accessInfo.setViewCount(0L);
+			}
+		}
+		
+		accessInfo.setViewCount(accessInfo.getViewCount() + 1);
+		accessInfo.setLastAccess(now);
+		Memcache.put(urlString, accessInfo);
+		
+		Datastore.put(accessInfo);
 	}
 }

@@ -34,12 +34,16 @@
 				</li>
 				<li><a href="#usage">Usage example</a>
 				</li>
+				<!-- 
 				<li><a href="#about">About</a>
 				</li>
+				-->
 			</ul>
 			<div id="intro">
 				<h2>An experimental API for parsing Java source code.</h2>
 				<p>The Java source code is parsed, and the result is returned by the JSON form.</p>
+				<h3>Source Repository</h3>
+				<p><a href="https://github.com/shoito/japarser">https://github.com/shoito/japarser</a></p>
 				<h3>Request URL</h3>
 				<p><a href="http://japarser.appspot.com/src">http://japarser.appspot.com/src</a></p>
 				<hr>
@@ -285,9 +289,11 @@
 				<h2>ex3. Java to Class diagram. (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
 				<img src="img/java2class_thumb.jpg" class="thumbnail" />
 			</div>
+			<!-- 
 			<div id="about">
 				<iframe src="http://about.me/shoito" width="100%" height="100%" seamless scrolling="no"></iframe>
 			</div>
+			-->
 		</div>
 		<div id="share" class="grid1">
 			<div class="facebook_like"></div>
@@ -297,7 +303,7 @@
 			<div class="evernote"></div>
 		</div>
 		<div id="footer" class="grid12">
-			<p id="copyright"><small>Copyright 2011 <a href="http://twitter.com/shoito">shoito</a> All Rights Reserved.</small></p>
+			<p id="copyright"><small>Copyright 2011 <a href="http://about.me/shoito">shoito</a> All Rights Reserved.</small></p>
 		</div>
 	</div>
 	<script type="text/javascript">
