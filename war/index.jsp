@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Japarser | An API for parsing Java source code.</title>
+<title>Japarser | Web API for parsing Java source code.</title>
 <link rel="shortcut icon" href="favicon.ico">
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/JavaScript" />
@@ -11,8 +11,11 @@
 <link type="text/css" href="css/style.css?v1" rel="stylesheet" />
 <link type="text/css" href="css/faary.css?v1" rel="stylesheet" />
 <link type="text/css" href="css/jquery-ui-1.8.10.custom.css?v1" rel="stylesheet" />
+<link type="text/css" href="css/contactable.css?v1" rel="stylesheet" />
 <script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
 <script	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+<script src="js/jquery.validate.pack.js?v1"></script>
+<script src="js/jquery.contactable.min.js?v1"></script>
 <script src="js/jquery.upload-1.0.2.min.js?v1"></script>
 <script src="js/jquery.socialbutton-1.7.1.js?v1"></script>
 <script src="js/jquery.activity-indicator-1.0.0.min.js?v1"></script>
@@ -40,7 +43,7 @@
 				-->
 			</ul>
 			<div id="intro">
-				<h2>An experimental API for parsing Java source code.</h2>
+				<h2>An experimental Web API for parsing Java source code</h2>
 				<p>The Java source code is parsed, and the result is returned by the JSON form.</p>
 				<h3>Source Repository</h3>
 				<p><a href="https://github.com/shoito/japarser">https://github.com/shoito/japarser</a></p>
@@ -265,7 +268,7 @@
 				</ul>
 			</div>
 			<div id="usage" class="iform">
-				<h2>ex1. Generate Class diagram from Java source code.</h2>
+				<h2>ex1. Generate Class diagram from Java source code</h2>
 				<div id="yumlUsage">
 					<ul>
 						<li class="iheader">Select .java file</li>
@@ -284,9 +287,9 @@
 					</ul>
 					<div id="loading"></div>
 				</div>
-				<h2>ex2. JavaDoc to Class diagram. (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
+				<h2>ex2. JavaDoc to Class diagram (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
 				<img src="img/javadoc2class_thumb.jpg" class="thumbnail" />
-				<h2>ex3. Java to Class diagram. (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
+				<h2>ex3. Java to Class diagram (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
 				<img src="img/java2class_thumb.jpg" class="thumbnail" />
 			</div>
 			<!-- 
@@ -305,6 +308,8 @@
 		<div id="footer" class="grid12">
 			<p id="copyright"><small>Copyright 2011 <a href="http://about.me/shoito">shoito</a> All Rights Reserved.</small></p>
 		</div>
+	</div>
+	<div id="contactable">
 	</div>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];

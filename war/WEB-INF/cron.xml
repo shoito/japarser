@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/heartbeat</url>
+    <description>Heartbeat the run every 4 minutes</description>
+    <schedule>every 4 minutes</schedule>
+    <timezone>Asia/Tokyo</timezone>
+  </cron>
+</cronentries>

@@ -1,6 +1,17 @@
 $(function() {
 	$("#tabs").tabs({fx:{opacity:'toggle', duration:'normal'}});
 
+	$('#contactable').contactable({
+		 name: 'Name',
+		 email: 'Email',
+		 message : 'Message',
+		 subject : 'A contactable message',
+		 recievedMsg : 'Thankyou for your message',
+		 notRecievedMsg : 'Sorry, your message could not be sent, try again later',
+		 disclaimer: 'Please feel free to get in touch, we value your feedback',
+		 hideOnSubmit: true
+	});
+		 
     $('.facebook_like').socialbutton('facebook_like', {
     	button: 'box_count',
     });
