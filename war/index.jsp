@@ -12,7 +12,7 @@
 <link type="text/css" href="css/faary.css?v1" rel="stylesheet" />
 <link type="text/css" href="css/jquery-ui-1.8.10.custom.css?v1" rel="stylesheet" />
 <link type="text/css" href="css/contactable.css?v1" rel="stylesheet" />
-<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
 <script	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
 <script src="js/jquery.validate.pack.js?v1"></script>
 <script src="js/jquery.contactable.min.js?v1"></script>
@@ -306,7 +306,7 @@
 			<div class="evernote"></div>
 		</div>
 		<div id="footer" class="grid12">
-			<p id="copyright"><small>Copyright 2011 <a href="http://about.me/shoito">shoito</a> All Rights Reserved.</small></p>
+			<p id="copyright"><small>Copyright 2011 <a href="http://www.change-vision.com/">Change Vision,Inc.</a> All Rights Reserved.</small></p>
 		</div>
 	</div>
 	<div id="contactable">
