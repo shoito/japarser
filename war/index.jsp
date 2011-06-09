@@ -1,3 +1,9 @@
+<%@page pageEncoding="UTF-8" isELIgnored="false" session="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,11 +37,11 @@
 		</div>
 		<div id="tabs" class="grid11 first">
 			<ul>
-				<li><a href="#intro">Intro</a>
+				<li><a href="#intro"><fmt:message key="intro.tab" /></a>
 				</li>
-				<li><a href="#demo">Demo</a>
+				<li><a href="#demo"><fmt:message key="demo.tab" /></a>
 				</li>
-				<li><a href="#usage">Usage example</a>
+				<li><a href="#usage"><fmt:message key="usage.tab" /></a>
 				</li>
 				<!-- 
 				<li><a href="#about">About</a>
@@ -43,34 +49,34 @@
 				-->
 			</ul>
 			<div id="intro">
-				<h2>An experimental Web API for parsing Java source code</h2>
-				<p>The Java source code is parsed, and the result is returned by the JSON form.</p>
-				<h3>Source Repository</h3>
+				<h2><fmt:message key="intro.abs" /></h2>
+				<p><fmt:message key="intro.detail" /></p>
+				<h3><fmt:message key="intro.repository" /></h3>
 				<p><a href="https://github.com/shoito/japarser">https://github.com/shoito/japarser</a></p>
-				<h3>Request URL</h3>
+				<h3><fmt:message key="intro.requestUrl" /></h3>
 				<p><a href="http://japarser.appspot.com/src">http://japarser.appspot.com/src</a></p>
 				<hr>
 				<h4>Method: GET</h4>
 				<table>
 				    <tbody>
 				        <tr>
-				            <th>Parameter</th>
-				            <th>Type</th>
-				            <th>Description</th>
+				            <th><fmt:message key="intro.parameter" /></th>
+				            <th><fmt:message key="intro.type" /></th>
+				            <th><fmt:message key="intro.description" /></th>
 				        </tr>
 				        <tr>
-				            <td>url(required)</td>
-				            <td>string</td>
-				            <td>URL of Java source code(.java)</td>
+				            <td><fmt:message key="intro.url" /></td>
+				            <td><fmt:message key="intro.url.type" /></td>
+				            <td><fmt:message key="intro.url.description" /></td>
 				        </tr>
 				        <tr>
-				            <td>pretty</td>
-				            <td>boolean</td>
-				            <td>the result is formatted in JSON that the readability is high.</td>
+				            <td><fmt:message key="intro.pretty" /></td>
+				            <td><fmt:message key="intro.pretty.type" /></td>
+				            <td><fmt:message key="intro.pretty.description" /></td>
 				        </tr>
 				    </tbody>
 				</table>
-				<h5>Examples</h5>
+				<h5><fmt:message key="intro.examples" /></h5>
 				<div>
 					<small>
 						<ul>
@@ -85,29 +91,29 @@
 				<table>
 				    <tbody>
 				        <tr>
-				            <th>Parameter</th>
-				            <th>Type</th>
-				            <th>Description</th>
+				            <th><fmt:message key="intro.parameter" /></th>
+				            <th><fmt:message key="intro.type" /></th>
+				            <th><fmt:message key="intro.description" /></th>
 				        </tr>
 				        <tr>
-				            <td>file(require)</td>
-				            <td>multipart/form-data</td>
-				            <td>Java source code file(.java)</td>
+				            <td><fmt:message key="intro.file" /></td>
+				            <td><fmt:message key="intro.file.type" /></td>
+				            <td><fmt:message key="intro.file.description" /></td>
 				        </tr>
 				        <tr>
-				            <td>pretty</td>
-				            <td>boolean</td>
-				            <td>the result is formatted in JSON that the readability is high.</td>
+				            <td><fmt:message key="intro.pretty" /></td>
+				            <td><fmt:message key="intro.pretty.type" /></td>
+				            <td><fmt:message key="intro.pretty.description" /></td>
 				        </tr>
 				    </tbody>
 				</table>
-				<h5>Examples</h5>
+				<h5><fmt:message key="intro.examples" /></h5>
 				<div>
 					<small>
-						<p>Please refer to <a href="#demo">Demo page</a>.</p>
+						<p><fmt:message key="intro.refer.demo" /></p>
 					</small>
 				</div>
-				<h4>Result JSON format</h4>
+				<h4><fmt:message key="intro.json" /></h4>
 				<pre>
 {
     "fields": [
@@ -253,9 +259,9 @@
 			</div>
 			<div id="demo" class="iform">
 				<ul>
-					<li class="iheader">Select .java file</li>
+					<li class="iheader"><fmt:message key="demo.select.file" /></li>
 					<li><label>.java</label><input type="file" name="file" id="fileUpload" class="itext" /></li>
-					<li><label for="CheckOption">JSON format</label>
+					<li><label for="CheckOption"><fmt:message key="demo.json.format" /></label>
 					<ul>
 						<li><input class="icheckbox" type="checkbox" name="CheckOption"
 							id="checkPretty" value="pretty"><label for="checkPretty"
@@ -263,15 +269,15 @@
 					</ul>
 					</li>
 					<li><label>&nbsp;</label><input type="button" class="ibutton" id="parseButton" value="Parsing" /></li>
-					<li class="iheader">Result</li>
+					<li class="iheader"><fmt:message key="demo.result" /></li>
 					<li><textarea id="output" class="itextarea"></textarea></li>
 				</ul>
 			</div>
 			<div id="usage" class="iform">
-				<h2>ex1. Generate Class diagram from Java source code</h2>
+				<h2><fmt:message key="usage.ex1.abs" /></h2>
 				<div id="yumlUsage">
 					<ul>
-						<li class="iheader">Select .java file</li>
+						<li class="iheader"><fmt:message key="demo.select.file" /></li>
 						<li><label>.java</label><input type="file" name="file" id="fileUploadForUml" class="itext" /></li>
 						<li><input class="iradio" type="radio" name="direction"
 							id="checkDirectionLeftRight" value="dir:lr" checked><label for="checkDirectionLeftRight"
@@ -287,10 +293,10 @@
 					</ul>
 					<div id="loading"></div>
 				</div>
-				<h2>ex2. JavaDoc to Class diagram (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
-				<img src="img/javadoc2class_thumb.jpg" class="thumbnail" />
-				<h2>ex3. Java to Class diagram (<a href="http://dl.dropbox.com/u/227786/crx/java2class/java2class.crx">DL: Chrome Extensions</a>)</h2>
-				<img src="img/java2class_thumb.jpg" class="thumbnail" />
+				<h2><fmt:message key="usage.ex2.abs" /></h2>
+				<a href="https://chrome.google.com/webstore/detail/pjkknfedjcaagjfalcfnfoebghfgjnbd"><img src="img/javadoc2class_thumb.jpg" class="thumbnail" /></a>
+				<h2><fmt:message key="usage.ex3.abs" /></h2>
+				<a href="https://chrome.google.com/webstore/detail/pjkknfedjcaagjfalcfnfoebghfgjnbd"><img src="img/java2class_thumb.jpg" class="thumbnail" /></a>
 			</div>
 			<!-- 
 			<div id="about">
