@@ -24,7 +24,7 @@ public class FeedbackController extends Controller {
 		String email = RequestLocator.get().getParameter("email");	
 		String message = RequestLocator.get().getParameter("message");
 		
-		sendMail("sho.ito@change-vision.com", name, email, message);
+		sendMail("feedback@example.com", name, email, message);
 		
 		PrintWriter writer = ResponseLocator.get().getWriter();
 		writer.write("success");

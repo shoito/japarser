@@ -1,6 +1,6 @@
 # Japarser
 ## An experimental API for parsing Java source code.
-The Java source code is parsed, and the result is returned by the JSON form.
+Free WEB API for parsing Java source code. It will read the Java source code from the provided URL and return the result by the JSON form.
 
 <http://japarser.appspot.com/>
 
