@@ -19,6 +19,7 @@ public class GoogleCodeHostingDictionary implements Dictionary {
 		Matcher matcher = pattern.matcher(url);
 		List<String> ret = new ArrayList<String>();
 		ret.add(matcher.replaceAll("//$1.googlecode.com/svn"));
+		ret.add(matcher.replaceAll("//$1.googlecode.com/git"));
 		ret.add(matcher.replaceAll("//$1.googlecode.com/hg"));
 		return ret;
 	}

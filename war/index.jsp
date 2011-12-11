@@ -312,7 +312,7 @@
 			<div class="evernote"></div>
 		</div>
 		<div id="footer" class="grid12">
-			<p id="copyright"><small>Copyright 2011 <a href="http://www.change-vision.com/">Change Vision,Inc.</a> All Rights Reserved.</small></p>
+			<p id="copyright"><small> </small></p>
 		</div>
 	</div>
 	<div id="contactable">
