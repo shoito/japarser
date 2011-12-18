@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
-
-import com.google.appengine.repackaged.com.google.io.base.IORuntimeException;
+import org.slim3.util.ThrowableUtil;
 
 public abstract class RestfulWebServiceController extends Controller {
 	public static final String CONTENT_TYPE_JSON = "application/json";
@@ -162,7 +161,7 @@ public abstract class RestfulWebServiceController extends Controller {
 				}
 			}
 		} catch (IOException e) {
-			throw new IORuntimeException(e);
+			ThrowableUtil.wrapAndThrow(e);
 		}
 	}
 }
